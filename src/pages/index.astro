@@ -3,7 +3,31 @@ import Layout from "../layouts/Layout.astro";
 import ImageRow from "../components/ImageRow.astro";
 ---
 
+<style>
+  body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1, h2 {
+    text-align: left;
+    margin-left: 10px;
+  }
+
+  .section {
+    margin-bottom: 30px;
+  }
+</style>
+
 <Layout>
   <h1>Spotify opgave</h1>
-  <ImageRow />
+
+  <div class="section">
+    <h2>Specielt til Peter Ulf Jørgensen</h2>
+    <ImageRow />
+  </div>
 </Layout>
+

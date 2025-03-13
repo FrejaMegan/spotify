@@ -1,32 +1,77 @@
 ---
-const images = [
-  "https://via.assets.so/album.png?id=1&q=95&w=360&h=360&fit=fill",
-  "https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill",
-  "https://via.assets.so/album.png?id=3&q=95&w=360&h=360&fit=fill",
-  "https://via.assets.so/album.png?id=4&q=95&w=360&h=360&fit=fill",
-  "https://via.assets.so/album.png?id=5&q=95&w=360&h=360&fit=fill",
-  "https://via.assets.so/album.png?id=6&q=95&w=360&h=360&fit=fill",
+const playlists = [
+  { 
+    image: "https://via.assets.so/album.png?id=1&q=95&w=360&h=360&fit=fill",
+    artists: "Miley Cyrus, Love Money Party"
+  },
+  { 
+    title: "Daily Mix 2", 
+    image: "https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill",
+    artists: "Everybody (Fonzworth Bentley Ft. Kanye West & Andre 3000)"
+  },
+  { 
+    title: "Daily Mix 3", 
+    image: "https://via.assets.so/album.png?id=3&q=95&w=360&h=360&fit=fill",
+    artists: "Rihanna, Kanye West & Paul McCartney, FourFiveSeconds"
+  },
+  { 
+    title: "Daily Mix 4", 
+    image: "https://via.assets.so/album.png?id=4&q=95&w=360&h=360&fit=fill",
+    artists: "Jay-Z  T.I. swagga like us"
+  },
+  { 
+    title: "Daily Mix 5", 
+    image: "https://via.assets.so/album.png?id=5&q=95&w=360&h=360&fit=fill",
+    artists: "Alan Jackson, She's got the rhythm (and i got the blues)"
+  },
+  { 
+    title: "Daily Mix 6", 
+    image: "https://via.assets.so/album.png?id=6&q=95&w=360&h=360&fit=fill",
+    artists: "Michael Jackson, Beat It"
+  }
 ];
 ---
 
 <style>
   .image-row {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     overflow-x: auto;
-    padding: 10px;
+    padding: 15px;
   }
 
-  .image-row img {
+  .playlist-item {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    width: 160px;
+  }
+
+  .playlist-item img {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
   }
+
+  .playlist-title {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  .playlist-artists {
+    font-size: 12px;
+    color: #b3b3b3;
+  }
 </style>
 
 <div class="image-row">
-  {images.map((img) => (
-    <img src={img} alt="Album cover" />
+  {playlists.map((playlist) => (
+    <div class="playlist-item">
+      <img src={playlist.image} alt={playlist.title} />
+      <p class="playlist-title">{playlist.title}</p>
+      <p class="playlist-artists">{playlist.artists}</p>
+    </div>
   ))}
 </div>
